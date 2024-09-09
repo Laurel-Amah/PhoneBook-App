@@ -54,7 +54,9 @@ Once the application is up and running, you can:
 ## Configuration
 
 - **Database**: Ensure your database connection settings in the **.env** file are correct. 
+
 E.g.
+
     DB_CONNECTION=mysql
 
     DB_HOST=127.0.0.1
@@ -64,7 +66,7 @@ E.g.
     DB_DATABASE=phonebook
 
     DB_USERNAME=root
-    
+
     DB_PASSWORD=yourpassword
 
 - **Environment variables**: Adjust other settings as necessary for your environment, such as mail settings, app name, and debug options.
