@@ -9,6 +9,7 @@ The PhoneBook App is a simple contact management system built using the Laravel 
 - [Features](#features)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
