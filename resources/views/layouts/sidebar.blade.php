@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://kit.fontawesome.com/232f67a211.js" crossorigin="anonymous"></script>
-    <title>Floating Content Example</title>
+    <title>@yield('title', 'Default Title')</title>
 <body>
 <body>
     <div class="container">
