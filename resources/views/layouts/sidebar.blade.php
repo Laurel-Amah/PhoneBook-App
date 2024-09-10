@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://kit.fontawesome.com/232f67a211.js" crossorigin="anonymous"></script>
-    <title>@yield('title', 'Default Title')</title>
+
+     <!-- Include intl-tel-input CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    
+     <title>@yield('title', 'Default Title')</title>
 <body>
 <body>
     <div class="container">
