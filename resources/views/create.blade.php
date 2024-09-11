@@ -18,11 +18,11 @@
             </button>
         </div>
         <div class="image-icon">
-            <i class="fa-regular fa-circle-user"></i>
-            <button class="add-user" title="hello!">
-                <i class="fa-solid fa-circle-plus"><input type="file" name="image" id="image"/>
-            </i>
-            </button>
+            <input type="file" name="image" id="file-upload" accept="image/*" onchange="previewImage(event)">
+            <label for="file-upload" class="upload-button">+</label>
+            <div class="avatar-frame">
+            <img id="avatar" src="{{ asset('images/user.png') }}" alt="Avatar">
+            </div>
         </div>
 
     <div class="create-details">
@@ -55,6 +55,7 @@
         </form>
         <script src="{{ asset('js/validate.js') }}"></script> 
         <script src="{{ asset('js/phone-input.js') }}"></script>
+        <script src="{{ asset('js/image-preview.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     </div>
 @endsection

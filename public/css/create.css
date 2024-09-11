@@ -1,5 +1,5 @@
 .title {
-    border-bottom: 20px, solid ,black;
+    border-bottom: 1px solid #CCCCCC;
 }
 form {
     background-color:#F5F5F5;
@@ -24,12 +24,14 @@ form .head {
 }
 
 .image-icon {
-    margin-left: 3%;
-    border-bottom: 10px, solid, black;
+    margin-left: 3.5%;
+    padding-bottom: 1%;
 }
 
 p {
     font-size: 80%;
+    border-top: #CCCCCC solid 1px;
+    padding-top: 12px;
 }
 
 .field i {
@@ -56,4 +58,45 @@ p {
 ::placeholder {
     color: rgba(0, 0, 0, 0.803);
     text-align: left;
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-frame {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#file-upload {
+    display: none;
 }
