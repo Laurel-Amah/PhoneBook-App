@@ -1,0 +1,53 @@
+.header-actions{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+    margin-top: -2%;
+}
+
+input {
+    background-color: #E5E5E5;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10%;
+    display: inline-block;
+}
+
+.sort {
+    border:none;
+    background-color: #F2F2F2;
+    padding: 10px 12px;
+    border-radius: 5px;
+    align-content: first baseline;
+}
+
+.table {
+    background-color: #F5F5F5;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+td .name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+td, th {
+   text-align: left;
+   padding: 10px 30px;
+}
+
+#contact-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}

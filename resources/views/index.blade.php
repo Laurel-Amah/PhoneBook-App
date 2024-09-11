@@ -14,6 +14,7 @@
             </select>
         </div>
     </header>
+    <div class="table">
     <table class="contact-table">
         <thead> 
             <tr>
@@ -24,13 +25,15 @@
             </tr>
         </thead>
         <tbody>
-            <p>Contacts</p>
+            <tr> <td colspan="4">Contacts</td></tr>
             @foreach ($contacts as $contact)
             <tr>
-                <td class="name">
-                    <img src="{{ $contact->image }}" alt="contact Image">
-                    <span>{{ $contact->fname }} </span>
-                    <span>{{ $contact->lname }}</span>
+                <td>
+                    <div class="name">
+                        <img src="{{ $contact->image_path ? asset($contact->image_path) : asset('images/user2.png') }}" alt="contact Image" id="contact-image">
+                        <span>{{ $contact->fname }} </span>
+                        <span>{{ $contact->lname }}</span>
+                    </div>
                 </td>
                 <td>
                     {{ $contact->phone }}
@@ -43,4 +46,5 @@
             @endforeach
         </tbody>
     </table>
+    </div>
 @endsection
