@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     const phoneInput = document.querySelector("#phone");
 
-    // Initialize the intl-tel-input
+    // Initialize the intl-tel-input without showing the country code
     window.intlTelInput(phoneInput, {
         initialCountry: "auto",
-        separateDialCode: true,
+        separateDialCode: false, // Ensures the dial code is not separated visually
+        nationalMode: true,      // Shows only the national number without the international dial code
         preferredCountries: ["cm"], // Optional: Set preferred countries
         geoIpLookup: function (callback) {
-            fetch('https://ipinfo.io/json?token=YOUR_TOKEN_HERE') // Get user's location
+            fetch('https://ipinfo.io/json?token=YOUR_TOKEN_HERE') // Replace with your IPInfo token
                 .then(response => response.json())
                 .then(data => callback(data.country))
                 .catch(() => callback('cm'));

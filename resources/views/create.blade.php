@@ -8,7 +8,8 @@
     </div>
     
     <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
+        @csrf 
+        <!--generates a hidden token that helps prevent Cross-Site Request Forgery (CSRF) attacks -->
         <div class="head">
             <i class="fas fa-arrow-left" title="Back"></i>
             <button type="submit" class="save-btn">
@@ -36,13 +37,13 @@
 
             <div class="field">
                 <i class="fa-solid fa-phone"></i>
-                <input type="tel" name="phone" id="phone" required/>
+                <input type="tel" name="phone" id="phone" placeholder="Phone Number" required/>
                 <span id="phoneError" class="error"></span><br><br>
             </div>
 
             <div class="field">
                 <i class="fa-regular fa-envelope"></i>
-                <input type="email" name="email" id="email"/>
+                <input type="email" name="email" id="email" placeholder="Email"/>
                 <br><br>
             </div>
 
@@ -52,7 +53,7 @@
                 <br><br>
             </div>
         </form>
-        <script src="{{ asset('js/validate.js') }}"></script>
+        <script src="{{ asset('js/validate.js') }}"></script> 
         <script src="{{ asset('js/phone-input.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     </div>

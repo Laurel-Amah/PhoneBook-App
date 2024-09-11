@@ -18,7 +18,7 @@ class ContactController extends Controller
         $validated = $request->validate([
             'fname' => 'required|string|max:155',
             'lname' => 'nullable|string|max:155',
-            'phone' => 'required|string|max:20',
+            'phone' => 'required|string|max:12',
             'email' => 'nullable|email|max:255',
             'category' => 'nullable|string|max:10',
             'image' => 'nullable|image|mimes:jpeg,png,gif'
@@ -33,6 +33,15 @@ class ContactController extends Controller
 
         Contact::create($validated);
 
-        return redirect()->route('contacts.create')->with('success', 'Contact created successfully!');
+        return redirect()->route('index')->with('success', 'Contact created successfully!');
+    }
+
+    public function index()
+    {
+        // To retrieve all contacts from the database
+        $contacts = Contact::all();
+
+        // To pass the contacts data to the index view
+        return view('index', compact('contacts'));
     }
 }

@@ -14,6 +14,17 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     const phone = document.getElementById('phone').value;
     let isValid = true;
 
+    // Email validation: check for '@' and '.'
+    if (!email.includes('@') || !email.includes('.')) {
+        displayError('emailError', 'Email must contain "@" and ".".');
+        isValid = false;
+    }
+
+    // If form is valid, proceed to submit
+    if (isValid) {
+        alert('Form submitted successfully!');
+        // Add your form submission logic here
+    }
 });
 
 // Display error messages

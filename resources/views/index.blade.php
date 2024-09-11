@@ -24,9 +24,23 @@
             </tr>
         </thead>
         <tbody>
+            <p>Contacts</p>
+            @foreach ($contacts as $contact)
             <tr>
-                <td colspan="4">Contacts</td>
+                <td class="name">
+                    <img src="{{ $contact->image }}" alt="contact Image">
+                    <span>{{ $contact->fname }} </span>
+                    <span>{{ $contact->lname }}</span>
+                </td>
+                <td>
+                    {{ $contact->phone }}
+                </td>
+                <td>
+                    {{ $contact->email }}
+                </td>
+                <td> </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 @endsection
