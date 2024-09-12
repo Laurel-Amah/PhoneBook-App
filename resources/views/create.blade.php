@@ -11,7 +11,7 @@
         @csrf 
         <!--generates a hidden token that helps prevent Cross-Site Request Forgery (CSRF) attacks -->
         <div class="head">
-            <i class="fas fa-arrow-left" title="Back"></i>
+        <a href="{{ route('index') }}"><i class="fas fa-arrow-left" title="Back"></i></a>
             <button type="submit" class="save-btn">
                 <span>Save contact</span>
                 <i class="fa-solid fa-file-arrow-down"></i>
