@@ -41,7 +41,13 @@
                 <td>
                     {{ $contact->email }}
                 </td>
-                <td> </td>
+                <td>
+                    <div class="button">
+                        <a href="{{ route('contacts.edit', $contact->id) }}" class="edit">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </div>
+                </td>
             </tr>
             @endforeach
         </tbody>
