@@ -1,19 +1,19 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Create')
+@section('title', 'Edit')
 
 @section('content')
     <div class="title">
-        <h2>Create Contact</h2>
+        <h2>Edit Contact</h2>
     </div>
     
-    <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf 
-        <!--generates a hidden token that helps prevent Cross-Site Request Forgery (CSRF) attacks -->
+    <form action="{{ route('contacts.update', $contact->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf <!--generates a hidden token that helps prevent Cross-Site Request Forgery (CSRF) attacks -->
+        @method('PUT')
         <div class="head">
-        <a href="{{ route('index') }}"><i class="fas fa-arrow-left" title="Back"></i></a>
+            <a href="{{ route('index') }}"><i class="fas fa-arrow-left" title="Back"></i></a>
             <button type="submit" class="save-btn">
-                <span>Save contact</span>
+                <span>Update contact</span>
                 <i class="fa-solid fa-file-arrow-down"></i>
             </button>
         </div>
@@ -21,7 +21,7 @@
             <input type="file" name="image" id="file-upload" accept="image/*" onchange="previewImage(event)">
             <label for="file-upload" class="upload-button">+</label>
             <div class="avatar-frame">
-            <img id="avatar" src="{{ asset('images/user.png') }}" alt="Avatar">
+            <img id="avatar" src="{{ $contact->image_path ? asset($contact->image_path) : asset('images/user2.png') }}" alt="Avatar">
             </div>
         </div>
 
@@ -29,27 +29,27 @@
         <p>Details</p>
             <div class="field">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" name="fname" id="fname" placeholder="First Name" required/>
+                <input type="text" name="fname" id="fname" placeholder="First Name" value="{{ old('name', $contact->fname) }}" required/>
                 <br><br>
-                <input type="text" name="lname" id="lname" placeholder="Last Name"/>
+                <input type="text" name="lname" id="lname" placeholder="Last Name" value="{{ old('name', $contact->lname) }}"/>
                 <br><br>
             </div>
 
             <div class="field">
                 <i class="fa-solid fa-phone"></i>
-                <input type="tel" name="phone" id="phone" placeholder="Phone Number" required/>
+                <input type="tel" name="phone" id="phone" placeholder="Phone Number" value="{{ old('phone', $contact->phone) }}" required/>
                 <span id="phoneError" class="error"></span><br><br>
             </div>
 
             <div class="field">
                 <i class="fa-regular fa-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="Email"/>
+                <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email', $contact->email) }}"/>
                 <br><br>
             </div>
 
             <div class="field">
                 <i class="fas fa-th-large"></i>
-                <input type="text" name="category" id="category" placeholder="Category"/>
+                <input type="text" name="category" id="category" placeholder="Category" value="{{ old('category', $contact->category) }}"/>
                 <br><br>
             </div>
         </form>

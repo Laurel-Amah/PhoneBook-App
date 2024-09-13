@@ -9,9 +9,16 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Link to the stylesheet for the index page -->
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 
     <!-- Link to the stylesheet for the create page -->
-     <link rel="stylesheet" href="{{ asset('css/create.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}">
+
+    <!-- Link to the stylesheet for the view page -->
+    <link rel="stylesheet" href="{{ asset('css/view.css') }}">
+
+    <!-- Link to the stylesheet for the btns-->
+    <link rel="stylesheet" href="{{ asset('css/btn.css') }}">
 
     <!-- Include intl-tel-input CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">

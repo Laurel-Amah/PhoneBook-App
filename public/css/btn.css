@@ -1,0 +1,7 @@
+.button2 .edit {
+    display: none;
+}
+
+tr:hover .button2 .edit {
+    display: inline-block;
+}
