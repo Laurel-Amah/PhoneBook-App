@@ -60,4 +60,5 @@
         </tbody>
     </table>
     </div>
+    <script src="{{ asset('js/search.js') }}"></script> 
 @endsection

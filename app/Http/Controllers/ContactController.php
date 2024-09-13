@@ -132,6 +132,12 @@ class ContactController extends Controller
                             ->orWhere('email', 'like', "%{$query}%")
                             ->get();
 
-        return view('search', compact('contacts', 'query'));
+        // Check if the request is AJAX
+        if ($request->ajax()) {
+            return response()->json(['contacts' => $contacts]);
+        }
+
+        // Return the normal view with all contacts if not an AJAX request
+        return view('index', compact('contacts'));
     }
 }
