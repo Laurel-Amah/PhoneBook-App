@@ -35,10 +35,16 @@
                 <br><br>
             </div>
 
-            <div class="field">
+            <div class="phone23">
                 <i class="fa-solid fa-phone"></i>
-                <input type="tel" name="phone" id="phone" placeholder="Phone Number" required/>
-                <span id="phoneError" class="error"></span><br><br>
+                <div class="field">
+                    <input type="tel" name="phone" id="phone" placeholder="Phone Number" required/>
+                    <span id="phoneError" class="error"></span><br><br>
+                </div>
+                <div class="field">
+                    <input type="tel" name="phone" id="phone23" placeholder="Phone Number" required/>
+                    <span id="phoneError" class="error"></span><br><br>
+                </div>
             </div>
 
             <div class="field">

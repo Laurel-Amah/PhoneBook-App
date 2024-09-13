@@ -33,7 +33,7 @@ class ContactController extends Controller
 
         Contact::create($validated);
 
-        return redirect()->route('view')->with('success', 'Contact created successfully!');
+        return redirect()->route('index')->with('success', 'Contact created successfully!');
     }
 
     public function index(Request $request)

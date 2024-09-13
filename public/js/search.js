@@ -3,7 +3,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
 
     fetch(`/search?query=${encodeURIComponent(query)}`, {
         headers: {
-            'X-Requested-With': 'XMLHttpRequest'
+            'X-Requested-Width': 'XMLHttpRequest'
         }
     })
     .then(response => response.json())
@@ -11,7 +11,6 @@ document.getElementById('searchInput').addEventListener('input', function () {
         let resultsDiv = document.getElementById('searchResults');
         resultsDiv.innerHTML = '';
 
-        // Check if the input field is empty and reset the result section
         if (query === '') {
             resultsDiv.innerHTML = ''; // Optionally clear the search result if input is empty
             return;
@@ -24,8 +23,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
                 resultsDiv.appendChild(contactElement);
             });
         } else {
-            // If no contacts are found, display the message
-            resultsDiv.innerHTML = '<p>No contacts found.</p>';
+            resultsDiv.innerHTML = '<h3>No contacts found!</h3>';
         }
     })
     .catch(error => console.error('Error:', error));

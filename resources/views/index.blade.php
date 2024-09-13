@@ -20,45 +20,45 @@
         </div>
     </header>
     <div class="table">
-    <table class="contact-table">
-        <thead> 
-            <tr>
-                <th> Name </th>
-                <th> Number </th>
-                <th> Email </th>
-                <th> </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr> <td colspan="4" class="names2">Contacts</td></tr>
-            @foreach ($contacts as $contact)
-            <tr>
-                <td>
-                    <div class="name">
-                        <img src="{{ $contact->image_path ? asset($contact->image_path) : asset('images/user2.png') }}" alt="contact Image" id="contact-image">
-                        <a href="{{ route('contacts.view', $contact->id) }}">
-                            <span>{{ $contact->fname }} </span>
-                            <span>{{ $contact->lname }}</span>
-                        </a>
-                    </div>
-                </td>
-                <td>
-                    {{ $contact->phone }}
-                </td>
-                <td>
-                    {{ $contact->email }}
-                </td>
-                <td>
-                    <div class="button2">
-                        <a href="{{ route('contacts.edit', $contact->id) }}" class="edit">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+        <table class="contact-table">
+            <thead> 
+                <tr>
+                    <th> Name </th>
+                    <th> Number </th>
+                    <th> Email </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> <td colspan="4" class="names2">Contacts</td></tr>
+                @foreach ($contacts as $contact)
+                <tr>
+                    <td>
+                        <div class="name">
+                            <img src="{{ $contact->image_path ? asset($contact->image_path) : asset('images/user2.png') }}" alt="contact Image" id="contact-image">
+                            <a href="{{ route('contacts.view', $contact->id) }}">
+                                <span>{{ $contact->fname }} </span>
+                                <span>{{ $contact->lname }}</span>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        {{ $contact->phone }}
+                    </td>
+                    <td>
+                        {{ $contact->email }}
+                    </td>
+                    <td>
+                        <div class="button2">
+                            <a href="{{ route('contacts.edit', $contact->id) }}" class="edit">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
-    <script src="{{ asset('js/search.js') }}"></script> 
+    <script src="{{ asset('js/search.js') }}"></script>
 @endsection

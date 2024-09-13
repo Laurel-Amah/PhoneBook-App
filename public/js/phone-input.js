@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const phoneInput = document.querySelector("#phone");
 
-    // Initialize the intl-tel-input without showing the country code
+    // Initialize the intl-tel-input
     window.intlTelInput(phoneInput, {
         initialCountry: "auto",
         separateDialCode: false, // Ensures the dial code is not separated visually

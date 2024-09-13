@@ -13,7 +13,7 @@
             <a href="{{ route('contacts.edit', $contact->id) }}" class="edit-btn">
                Edit Contact <i class="fas fa-edit"></i>
             </a>
-            <a href="{{ route('contacts.delete', $contact->id) }}" class="del-btn" id="delete" onclick="return confirm('Are you sure you want to delete this contact?');"> <i class="fas fa-trash"></i></a>
+            <a href="{{ route('contacts.delete', $contact->id) }}" class="del-btn" id="delete" onclick="return confirm('Are you sure you want to delete this contact?');"> <i class="fa fa-trash" aria-hidden="true"></i></a>
         </div>
     </div>
     <div class="image-icon1">
