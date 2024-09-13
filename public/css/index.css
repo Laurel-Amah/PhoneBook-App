@@ -51,3 +51,22 @@ td, th {
     align-items: center;
     overflow: hidden;
 }
+
+table a {
+    text-decoration: none;
+    color: black;
+}
+
+.names2 {
+    font-size: small;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.search-form {
+    margin-bottom: -50px;
+    background-color: transparent;
+}

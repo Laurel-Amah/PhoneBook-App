@@ -1,0 +1,50 @@
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.edit-btn:visited{
+    background-color: #463FF1;
+    color: #bd1e1e;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.image-icon1 {
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+
+.names1 {
+    font-weight: bolder;
+    font-size: larger;
+    padding-bottom: -20px;
+}
+
+.division {
+    border-bottom: 1px solid #CCCCCC;
+    padding-top: 10px;
+}
+
+h4 {    
+    padding-top: 10px;
+}
+
+.details {
+    background-color: #DEDEFF;
+    border-radius: 10px;
+    margin-right: 70%;
+    padding-left: 1%;
+}
+
+.details i {
+    padding-right: 5px;
+}
+

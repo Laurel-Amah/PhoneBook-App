@@ -33,17 +33,31 @@ class ContactController extends Controller
 
         Contact::create($validated);
 
-        return redirect()->route('index')->with('success', 'Contact created successfully!');
+        return redirect()->route('view')->with('success', 'Contact created successfully!');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         // To retrieve all contacts from the database
         $contacts = Contact::all();
+        // Get the sort option from the request, default to 'asc' (A-Z)
+        $sort = $request->input('sort', 'asc');
 
-        // To pass the contacts data to the index view
-        return view('index', compact('contacts'));
+        // Define the sorting logic
+        switch ($sort) {
+            case 'desc':
+                $contacts = Contact::orderBy('fname', 'desc')->get();
+                break;
+            case 'recent':
+                $contacts = Contact::orderBy('created_at', 'desc')->get();
+                break;
+            default:
+                $contacts = Contact::orderBy('fname', 'asc')->get();
+        }
+
+        return view('index', compact('contacts', 'sort'));
     }
+
 
     public function edit($id)
     {
@@ -89,4 +103,35 @@ class ContactController extends Controller
         // Redirect to the contacts index page with a success message
         return redirect()->route('index')->with('success', 'Contact updated successfully!');
     }
-}    
+
+    public function view($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('view', compact('contact'));
+    }
+
+    public function delete($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return redirect()->route('index')->with('success', 'Contact deleted successfully!');
+    }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'query' => 'nullable|string|max:255',
+        ]);
+
+        $query = $request->input('query');
+
+        // Perform the search
+        $contacts = Contact::where('fname', 'like', "%{$query}%")
+                            ->orWhere('lname', 'like', "%{$query}%")
+                            ->orWhere('phone', 'like', "%{$query}%")
+                            ->orWhere('email', 'like', "%{$query}%")
+                            ->get();
+
+        return view('search', compact('contacts', 'query'));
+    }
+}

@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Create')
+@section('title', 'Edit')
 
 @section('content')
     <div class="title">
@@ -21,7 +21,7 @@
             <input type="file" name="image" id="file-upload" accept="image/*" onchange="previewImage(event)">
             <label for="file-upload" class="upload-button">+</label>
             <div class="avatar-frame">
-            <img id="avatar" src="{{ asset('images/user.png') }}" alt="Avatar">
+            <img id="avatar" src="{{ $contact->image_path ? asset($contact->image_path) : asset('images/user2.png') }}" alt="Avatar">
             </div>
         </div>
 
