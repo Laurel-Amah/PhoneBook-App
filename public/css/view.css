@@ -4,10 +4,10 @@
     margin-bottom: 2%;
 }
 
-.edit-btn:visited{
+.buttons1 .edit-btn{
     background-color: #463FF1;
-    color: #bd1e1e;
     border: none;
+    color: white;
     padding: 5px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -17,6 +17,11 @@
     text-decoration: none;
 }
 
+.buttons1 .del-btn {
+    color: #111111;
+    padding-bottom: -10px;
+    font-size: large;
+}
 .image-icon1 {
     margin-left: 10%;
     margin-bottom: 2%;
@@ -48,3 +53,7 @@ h4 {
     padding-right: 5px;
 }
 
+.buttons1 {
+    display: inline-flex;
+    gap: 20px;
+}

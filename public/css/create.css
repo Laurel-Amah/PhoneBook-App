@@ -43,16 +43,37 @@ p {
     background-color: #CCCCCC;
     border: none;
     border-radius: 5px;
-    padding: 13px 200px;
+    width: 20%;
     text-align: left;
 }
 
 #lname {
-    margin-left: 3%;
+    margin-left: 2.6%;
 }
 
 #phone{
-    padding: 13px 200px;
+    color: #FFFFFF;
+    width: 10px;
+    margin-left: 6px;
+    padding: 6px 20px;
+}
+
+.phone23 {
+    display: inline-flex;
+    gap: 3px;
+    align-content: center;
+}
+
+.phone23 i {
+    margin-bottom: 10px;
+}
+
+#phone23 {
+    background-color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+    width: 200%;
+    text-align: left;
 }
 
 ::placeholder {
@@ -100,3 +121,4 @@ p {
 #file-upload {
     display: none;
 }
+

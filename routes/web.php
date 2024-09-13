@@ -21,4 +21,4 @@ Route::get('/contacts/{id}/view', [ContactController::class, 'view'])->name('con
 Route::get('/contacts{id}', [ContactController::class, 'delete'])->name('contacts.delete');
 
 // Route to search for a contact
-Route::post('/contacts/search', [ContactController::class, 'search'])->name('contacts.search');
+Route::post('/search', [ContactController::class, 'search'])->name('contacts.search');

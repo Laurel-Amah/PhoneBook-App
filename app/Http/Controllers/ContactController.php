@@ -33,7 +33,7 @@ class ContactController extends Controller
 
         Contact::create($validated);
 
-        return redirect()->route('view')->with('success', 'Contact created successfully!');
+        return redirect()->route('index')->with('success', 'Contact created successfully!');
     }
 
     public function index(Request $request)
@@ -132,6 +132,12 @@ class ContactController extends Controller
                             ->orWhere('email', 'like', "%{$query}%")
                             ->get();
 
-        return view('search', compact('contacts', 'query'));
+        // Check if the request is AJAX
+        if ($request->ajax()) {
+            return response()->json(['contacts' => $contacts]);
+        }
+
+        // Return the normal view with all contacts if not an AJAX request
+        return view('index', compact('contacts'));
     }
 }
