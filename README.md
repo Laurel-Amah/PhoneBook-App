@@ -9,6 +9,7 @@ The PhoneBook App is a simple contact management system built using the Laravel 
 - [Features](#features)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
@@ -36,7 +37,7 @@ Follow these steps to set up the PhoneBook App on your local machine:
 7. **Serve the application**
     php artisan serve
 
-The application should now be running at **http://localhost:8080**
+The application should now be running at **http://127.0.0.1:8000/**
 
 ## Usage
 Once the application is up and running, you can:
@@ -75,5 +76,5 @@ E.g.
 I am the sole contributor to this small project, and for all other information you can contact me by mail:
 - laurelngumamah@gmail.com.
 
-# Liscense
+# License
 This project is licensed under the [MIT license](https://opensource.org/licenses/MIT).
