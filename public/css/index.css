@@ -70,3 +70,9 @@ a {
     margin-bottom: -50px;
     background-color: transparent;
 }
+
+input[type=search] {
+    width: 200%;
+    text-align: left;
+    background-image: url("");
+}
