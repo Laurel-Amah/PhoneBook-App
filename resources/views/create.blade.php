@@ -12,7 +12,7 @@
         <!--generates a hidden token that helps prevent Cross-Site Request Forgery (CSRF) attacks -->
         <div class="head">
         <a href="{{ route('index') }}"><i class="fas fa-arrow-left" title="Back"></i></a>
-            <button type="submit" class="save-btn">
+            <button type="submit" class="save-btn"  id="create" onclick="showAlert()">
                 <span>Save contact</span>
                 <i class="fa-solid fa-file-arrow-down"></i>
             </button>
@@ -35,17 +35,18 @@
                 <br><br>
             </div>
 
-            <div class="phone23">
-                <i class="fa-solid fa-phone"></i>
-                <div class="field">
-                    <input type="tel" name="phone" id="phone" placeholder="Phone Number" required/>
-                    <span id="phoneError" class="error"></span><br><br>
+            <div class="phone-field">
+                <div class="flags">
+                    <i class="fa-solid fa-phone"></i>
+                    <span id="phoneError" class="phone-error"></span><br><br>
                 </div>
-                <div class="field">
-                    <input type="tel" name="phone" id="phone23" placeholder="Phone Number" required/>
-                    <span id="phoneError" class="error"></span><br><br>
+                <div class="phone">
+                    <input type="tel" name="phone" id="phone" placeholder="Phone Number" required/>
                 </div>
             </div>
+            
+
+            <input type="tel" placeholder="Phone number" class="phone-number-input">
 
             <div class="field">
                 <i class="fa-regular fa-envelope"></i>
@@ -64,4 +65,22 @@
         <script src="{{ asset('js/image-preview.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     </div>
+
+    
+     <!-- Custom Alert HTML -->
+     <div id="customAlert" class="alert" style="display: none;">
+        <div class="alert-content"> 
+            <div class="alert-icon">
+             <i class="fa-solid fa-user-times"></i>
+            </div> <br><p>The contact is saved successfully!</p>
+        <button class="close-btn" onclick="closeAlert()">✖</button> 
+        </div>
+    </div>
+
+    <!-- Include meta tag for JavaScript -->
+    <meta name="alert-message" content="{{ session('success') ? 'true' : 'false' }}">
+
+    <!-- Link to the custom JS file -->
+    <script src="{{ asset('js/alerts.js') }}"></script>
+
 @endsection

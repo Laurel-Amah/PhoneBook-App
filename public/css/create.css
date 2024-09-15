@@ -51,31 +51,6 @@ p {
     margin-left: 2.6%;
 }
 
-#phone{
-    color: #FFFFFF;
-    width: 10px;
-    margin-left: 6px;
-    padding: 6px 20px;
-}
-
-.phone23 {
-    display: inline-flex;
-    gap: 3px;
-    align-content: center;
-}
-
-.phone23 i {
-    margin-bottom: 10px;
-}
-
-#phone23 {
-    background-color: #CCCCCC;
-    border: none;
-    border-radius: 5px;
-    width: 200%;
-    text-align: left;
-}
-
 ::placeholder {
     color: rgba(0, 0, 0, 0.803);
     text-align: left;
@@ -122,3 +97,16 @@ p {
     display: none;
 }
 
+.phone-field {
+    display: inline-flex;
+    align-content: center;
+}
+
+.flags {
+    display: flex;
+    gap: 7px;
+}
+
+.phone-error {
+    width: 20%
+}

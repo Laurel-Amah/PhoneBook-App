@@ -20,6 +20,13 @@
     <!-- Link to the stylesheet for the btns-->
     <link rel="stylesheet" href="{{ asset('css/btn.css') }}">
 
+    <!-- Link to stylesheet for alerts -->
+    <link rel="stylesheet" href="{{ asset('css/alerts.css') }}">
+
+    <!-- Link to stylesheet for alerts -->
+    <link rel="stylesheet" href="{{ asset('css/phone-input.css') }}">
+
+
     <!-- Include intl-tel-input CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     
