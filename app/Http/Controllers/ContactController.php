@@ -18,7 +18,7 @@ class ContactController extends Controller
         $validated = $request->validate([
             'fname' => 'required|string|max:155',
             'lname' => 'nullable|string|max:155',
-            'phone' => 'required|string|max:12',
+            'phone' => 'required|string|max:15',
             'email' => 'nullable|email|max:255',
             'category' => 'nullable|string|max:10',
             'image' => 'nullable|image|mimes:jpeg,png,gif'
@@ -71,7 +71,7 @@ class ContactController extends Controller
         $request->validate([
             'fname' => 'required|string|max:155',
             'lname' => 'nullable|string|max:155',
-            'phone' => 'required|string|max:12',
+            'phone' => 'required|string|max:15',
             'email' => 'nullable|email|max:255',
             'category' => 'nullable|string|max:10',
             'image' => 'nullable|image|mimes:jpeg,png,gif|max:2048', // Ensure max file size is defined

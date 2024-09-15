@@ -35,18 +35,17 @@
                 <br><br>
             </div>
 
-            <div class="phone-field">
-                <div class="flags">
-                    <i class="fa-solid fa-phone"></i>
-                    <span id="phoneError" class="phone-error"></span><br><br>
+            <div class="phone-input-wrapper">
+                <i class="fas fa-phone"></i>
+                <div class="flag-dropdown">
+                    <!-- This will be managed by intl-tel-input -->
+                    <input id="phone-flag" type="tel" name="phone-flag">
                 </div>
-                <div class="phone">
-                    <input type="tel" name="phone" id="phone" placeholder="Phone Number" required/>
+                <div class="phone-number-input">
+                    <!-- Actual phone number input -->
+                    <input id="phone-number" name="phone" type="text" placeholder="Phone number">
                 </div>
             </div>
-            
-
-            <input type="tel" placeholder="Phone number" class="phone-number-input">
 
             <div class="field">
                 <i class="fa-regular fa-envelope"></i>

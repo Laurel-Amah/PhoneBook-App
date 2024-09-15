@@ -1,18 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const phoneInput = document.querySelector("#phone");
+    const phoneFlagInput = document.querySelector("#phone-flag");
 
-    // Initialize the intl-tel-input
-    window.intlTelInput(phoneInput, {
+    // Initialize the intl-tel-input for the flag input
+    const iti = window.intlTelInput(phoneFlagInput, {
         initialCountry: "auto",
-        separateDialCode: false, // Ensures the dial code is not separated visually
-        nationalMode: true,      // Shows only the national number without the international dial code
-        preferredCountries: ["cm"], // Optional: Set preferred countries
+        separateDialCode: false,  // Prevents showing the dial code in the input
+        nationalMode: true,
+        preferredCountries: ["cm"],
         geoIpLookup: function (callback) {
-            fetch('https://ipinfo.io/json?token=YOUR_TOKEN_HERE') // Replace with your IPInfo token
+            fetch('https://ipinfo.io/json?token=YOUR_TOKEN_HERE')
                 .then(response => response.json())
                 .then(data => callback(data.country))
                 .catch(() => callback('cm'));
         },
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // for formatting/validation etc.
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+
+    // Sync the dial code with the phone number input when a country is selected
+    phoneFlagInput.addEventListener('countrychange', function () {
+        const dialCode = iti.getSelectedCountryData().dialCode;
+        // Optionally, you can also update the phone input
+        document.querySelector("#phone-number").value = ''; // Start fresh without a dial code
     });
 });
