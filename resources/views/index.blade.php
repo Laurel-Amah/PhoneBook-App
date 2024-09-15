@@ -43,10 +43,14 @@
                         </div>
                     </td>
                     <td>
-                        {{ $contact->phone }}
+                        <a href="tel:{{ $contact->phone }}" data-ajax="false">
+                            {{ $contact->phone }}
+                        </a>
                     </td>
-                    <td>
-                        {{ $contact->email }}
+                    <td>    
+                        <a href="mailto:{{ $contact->email }}" data-ajax="false">
+                            {{ $contact->email }}
+                        </a>
                     </td>
                     <td>
                         <div class="button2">

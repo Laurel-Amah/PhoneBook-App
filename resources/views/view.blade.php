@@ -27,8 +27,8 @@
    <div class="division"></div>
     <div class="details">
         <h4>Contact details</h4>
-        <span><i class="fa-solid fa-phone"></i> {{ old('name', $contact->phone) }}</span><br><br>
-        <span><i class="fa-regular fa-envelope"></i>{{ old('name', $contact->email) }} </span><br><br>
+        <span><i class="fa-solid fa-phone"></i><a href="tel:{{ old('name', $contact->phone) }}" data-ajax="false">{{ old('name', $contact->phone) }}</a></span><br><br>
+        <span><i class="fa-regular fa-envelope"></i><a href="mailto:{{ old('name', $contact->email) }}" data-ajax="false">{{ old('name', $contact->email) }}</a> </span><br><br>
         <span><i class="fas fa-th-large"></i>{{ old('name', $contact->category) }}</span><br><br>
     </div>
 @endsection
